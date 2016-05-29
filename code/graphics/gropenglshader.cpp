@@ -183,7 +183,7 @@ void opengl_shader_shutdown()
 static char *opengl_load_shader(char *filename, int flags)
 {
 	SCP_string sflags;
-
+	sflags += "#version 120\n";
 	if (Use_GLSL >= 4) {
 		sflags += "#define SHADER_MODEL 4\n";
 	} else if (Use_GLSL == 3) {
