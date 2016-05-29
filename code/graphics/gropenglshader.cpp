@@ -306,10 +306,9 @@ static char *opengl_load_shader(shader_type type_id, char *filename, int flags)
 	SCP_string sflags;
 
 #ifdef __APPLE__
-	sflags += "#version 120\n";
 	sflags += "#define APPLE\n";
 #endif
-
+	sflags += "#version 120\n";
 	if (type_id == SDR_TYPE_POST_PROCESS_MAIN || type_id == SDR_TYPE_POST_PROCESS_LIGHTSHAFTS || type_id == SDR_TYPE_POST_PROCESS_FXAA) {
 		// ignore looking for variants. main post process, lightshafts, and FXAA shaders need special headers to be hacked in
 		opengl_post_load_shader(sflags, type_id, flags);
